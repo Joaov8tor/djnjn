@@ -39,8 +39,10 @@ SetSpeedButton.Size = UDim2.new(0, 160, 0, 40)
 SetSpeedButton.Text = "Definir Velocidade"
 
 -- Abrir/Fechar painel
+local panelVisible = true -- Variável para rastrear o estado do painel
 OpenCloseButton.MouseButton1Click:Connect(function()
-    MainFrame.Visible = not MainFrame.Visible
+    panelVisible = not panelVisible -- Alternar o estado
+    MainFrame.Visible = panelVisible
 end)
 
 -- Definir velocidade do personagem
@@ -61,3 +63,4 @@ SetSpeedButton.MouseButton1Click:Connect(function()
         print("Por favor, insira um número válido!")
     end
 end)
+
